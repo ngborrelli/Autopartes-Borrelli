@@ -53,3 +53,16 @@
 .menu li a:hover {
     color: rgb(85, 85, 85);
 }
+
+#contadorCarrito {
+    padding: 2px 6px;
+    vertical-align: top;
+    margin-left: -20px;
+    color: white;
+    background-color: orangered;
+    border-radius: 50%;
+}
+
+.carrito {
+    margin-right: 15px;
+}

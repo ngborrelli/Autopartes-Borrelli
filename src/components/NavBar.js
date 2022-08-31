@@ -1,6 +1,7 @@
 import React from 'react'
 import estilos from '../assets/css/estilos.css';
 import logo from '../assets/images/porsche.png';
+import CartWidget from './CartWidget';
 
 
 const NavBar = () => {
@@ -28,6 +29,8 @@ const NavBar = () => {
         </ul>
 
         <button onClick="alert('asdsad')">Login</button>
+
+        < CartWidget />
     </nav>
   )
 }
