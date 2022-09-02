@@ -28,7 +28,7 @@ const NavBar = () => {
 
         </ul>
 
-        <button onClick="alert('asdsad')">Login</button>
+        <button>Login</button>
 
         < CartWidget />
     </nav>
