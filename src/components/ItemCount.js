@@ -28,7 +28,6 @@ const ItemCount = (prop) => {
 
   return (
     <div className="itemCounter">
-        <h2>Item</h2>
         <div className="cajaBotones">
             <button onClick={subItem}>-</button>
             <span>{itemCounter}</span>
