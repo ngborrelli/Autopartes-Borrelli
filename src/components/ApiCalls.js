@@ -51,3 +51,27 @@ export const getArticulos = () => {
         })
         return task;
     };
+
+export const getArticulo = (articulo) => {
+  const task = new Promise((resolve, reject) => {
+      setTimeout(
+          () => {
+              resolve(
+              
+                  {
+                      "categoria": "suspensión",
+                      "id": "996170",
+                      "titulo": "Amortiguador de aire de suspensión trasero Porsche Cayenne 2005 U54",
+                      "stock": 23,
+                      "descuento": 0,
+                      "precio": 14889,
+                      "descripcion": "Amortiguador de aire trasero, izquierdo o derecho. Incluye bolsa, base y ADS. Aplica para los siguientes modelos: Porsche Cayenne 2003-2010, Volkswagen Touareg 2004-2010, Audi Q7 2007-2015",
+                      "imagen1": "../assets/images/1_1.jpg"
+                    }
+              )
+          }
+      , 2000);
+
+      })
+      return task;
+  };

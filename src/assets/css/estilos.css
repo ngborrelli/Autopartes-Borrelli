@@ -131,3 +131,34 @@
     font-weight: bold;
 }
 
+.articuloDetalle {
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border: 1px solid rgb(229, 229, 229);
+}
+
+.articuloDetalle .datosArticulo {
+    border: none;
+}
+
+.agrupador {
+    display: flex;
+    flex-direction: column;
+}
+
+.cajaImg img {
+    max-height: 300px;
+}
+
+.articuloDetalle .titulo, .articuloDetalle .descripcion, .articuloDetalle .precio, .articuloDetalle .numeroParte, .articuloDetalle .stock {
+    margin: 8px;
+
+}
+
+.contadorCarrito {
+    margin-bottom: 10px;
+}
