@@ -1,11 +1,14 @@
 import { React, useState, useEffect } from 'react';
 import { getArticulos } from './ApiCalls';
+import { useParams } from 'react-router-dom';
 import Item from './Item';
 
 const ItemList = () => {
 
+const { catid } = useParams();
+
     useEffect(() => {
-        getArticulos().then((data) => {
+        getArticulos(catid).then((data) => {
             setArticulos(data);
         })
     });

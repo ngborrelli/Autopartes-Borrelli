@@ -162,3 +162,22 @@
 .contadorCarrito {
     margin-bottom: 10px;
 }
+
+.linkCategorias {
+    padding-right: 10px;
+    font-size: 1.4rem;
+    color: black;
+}
+
+.linkTitulo {
+    color: #1a7db7;
+}
+
+.linkCategorias, .linkTitulo {
+    text-decoration: none;
+}
+
+.linkTitulo:visited {
+    color: #1a7db7;
+}
+

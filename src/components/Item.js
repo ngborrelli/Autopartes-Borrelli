@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemCount from './ItemCount';
 import imagen from '../assets/images/2_1.jpg';
+import { Link } from 'react-router-dom';
 
 const Item = (prop) => {
 
@@ -11,7 +12,7 @@ const Item = (prop) => {
         </div>
         <div className="datosArticulo">
             <div className="titulo">
-                {prop.titulo}
+                <Link className="linkTitulo" to={`/articulo/${prop.id}`}>{prop.titulo}</Link>
             </div>
             
             <div className="numeroParte">

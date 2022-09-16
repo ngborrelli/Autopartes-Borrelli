@@ -1,11 +1,14 @@
 import { React, useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import { getArticulo } from './ApiCalls';
 
 const ItemDetailContainer = () => {
 
+  const { id } = useParams();
+  
     useEffect(() => {
-        getArticulo().then((data) => {
+        getArticulo(id).then((data) => {
             setArticulo(data);
         })
     });
