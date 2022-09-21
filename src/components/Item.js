@@ -28,7 +28,7 @@ const Item = (prop) => {
             </div>
         </div>
         <div>
-            <ItemCount id={prop.id} stock={prop.stock}/>
+            
         </div>
     </article>
   )

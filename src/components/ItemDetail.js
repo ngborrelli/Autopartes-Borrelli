@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItemCount from './ItemCount';
 import foto from '../assets/images/1_1grande.jpg';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = (prop) => {
-  return (
-   
+
+    const [cantidad, setCantidad] = useState(0);
+
+    const sumar = (cant) => {
+        setCantidad(cant);
+        console.log("Sumamos " + cantidad);
+    }
+
+    return (
+
     <article className="articuloDetalle">
         <div className="cajaImg">
             <img src={foto} />
@@ -32,9 +41,18 @@ const ItemDetail = (prop) => {
                 <span>Stock: </span>{prop.stock}
                 </div>
             </div>
-            <div className="contadorCarrito">
-                <ItemCount id={prop.id} stock={prop.stock}/>
-            </div>
+            {
+                
+                cantidad == 0 ?
+                    <div className="contadorCarrito">
+                        <ItemCount id={prop.id} stock={prop.stock} onAdd={sumar}/>
+                    </div> 
+                    : 
+                    <div>
+                        <Link className="botonFinalizar" to="/cart">Finalizar compra</Link>
+                    </div>
+                
+            }
         </div>
     </article>
     

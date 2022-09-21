@@ -14,12 +14,13 @@ const ItemCount = (prop) => {
     }
 
     const agregarCarrito = (cantidad) => {
-        if (cantidad > prop.stock) {
+        if (cantidad > stock) {
             console.log("No hay stock suficiente");
         }
         else {
             if (cantidad > 0) {
-            console.log("Se agregaron " + cantidad + " items")
+                console.log("Se agregaron " + cantidad + " items");
+                prop.onAdd(cantidad);
             }
         }
     }
