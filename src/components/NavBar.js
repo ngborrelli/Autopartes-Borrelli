@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from 'react';
-import estilos from '../assets/css/estilos.css';
 import logo from '../assets/images/porsche.png';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';

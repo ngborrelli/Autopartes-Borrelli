@@ -1,22 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ItemCount from './ItemCount';
 import foto from '../assets/images/1_1grande.jpg';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../app/CartContext';
 
 const ItemDetail = (prop) => {
+
+    const { items, addItem, removeItem, clearItems } = useContext(CartContext);
 
     const [cantidad, setCantidad] = useState(0);
 
     const sumar = (cant) => {
         setCantidad(cant);
-        console.log("Sumamos " + cantidad);
+        addItem( { id : prop.id, titulo: prop.titulo, precio : prop.precio, cantidad : cant })
     }
 
     return (
 
     <article className="articuloDetalle">
         <div className="cajaImg">
-            <img src={foto} />
+            <img src={foto} alt="Foto item"/>
         </div>
 
         <div className="agrupador">
@@ -43,7 +46,7 @@ const ItemDetail = (prop) => {
             </div>
             {
                 
-                cantidad == 0 ?
+                cantidad === 0 ?
                     <div className="contadorCarrito">
                         <ItemCount id={prop.id} stock={prop.stock} onAdd={sumar}/>
                     </div> 

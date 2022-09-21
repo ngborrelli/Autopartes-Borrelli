@@ -1,5 +1,4 @@
 import React, { Component, useState } from 'react';
-import estilos from '../assets/css/estilos.css';
 
 const ItemCount = (prop) => {
 
@@ -19,7 +18,6 @@ const ItemCount = (prop) => {
         }
         else {
             if (cantidad > 0) {
-                console.log("Se agregaron " + cantidad + " items");
                 prop.onAdd(cantidad);
             }
         }
