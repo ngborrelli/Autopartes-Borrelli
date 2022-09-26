@@ -191,10 +191,31 @@
 
 .tablaCarrito {
     margin: 0 auto;
+    width: 70%;
 }
 
 .tablaCarrito td {
     padding: 20px;
+}
+
+.tablaCarrito th {
+    width: 10%;
+}
+
+.tablaCarrito th+th {
+    width: 30%;
+}
+
+.tablaCarrito th+th+th {
+    width: 5%;
+}
+
+.tablaCarrito th+th+th+th {
+    width: 5%;
+}
+
+.tablaCarrito th+th+th+th+th {
+    width: 5%;
 }
 
 .divTablaCarrito {
@@ -219,6 +240,31 @@
     font-size: 0.8rem;
     margin: 10px;
     background-color: #b52f2f; 
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.carritoVacio {
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 4px;
+    padding: 25px;
+    width: 30%;
+
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.linkCarritoVacio {
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin: 10px;
+    background-color: #797979; 
     border: none;
     border-radius: 4px;
     color: white;

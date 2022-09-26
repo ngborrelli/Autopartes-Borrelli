@@ -3,6 +3,8 @@ import logo from '../assets/images/porsche.png';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 import { getCategorias } from './ApiCalls';
+import { CartContext } from '../app/CartContext';
+import { useContext } from 'react';
 
 const NavBar = () => {
 
@@ -12,6 +14,7 @@ const NavBar = () => {
     })
 });
 
+const { items, addItem, removeItem, clearItems, countItems } = useContext(CartContext);
 const [categorias, setCategorias] = useState([]);
 
   return (
@@ -23,10 +26,9 @@ const [categorias, setCategorias] = useState([]);
             categorias.map((categoria, i) => <Link className="linkCategorias" key={i} to={`/categoria/${categoria}`}>{categoria}</Link>)
           }
         </ul>
-
-        <button>Login</button>
-
-        < CartWidget />
+        {
+          countItems() > 0 && <CartWidget />
+        }
     </nav>
   )
 }
