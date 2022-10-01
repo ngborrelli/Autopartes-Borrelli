@@ -10,7 +10,7 @@ const AppRouter = () => (
         <Route element={<Layout />}>
             <Route index element={<ItemListContainer />} />
             <Route path="/categoria/:catid" element={<ItemListContainer />} />
-            <Route path="/articulo/:id" element={<ItemDetailContainer />} />
+            <Route path="/autoparte/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
         </Route>
         </Routes>

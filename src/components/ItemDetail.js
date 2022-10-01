@@ -1,54 +1,70 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import ItemCount from './ItemCount';
-import foto from '../assets/images/1_1grande.jpg';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../app/CartContext';
+import { getAutoparteById } from '../app/FirebaseCalls';    
 
-const ItemDetail = (prop) => {
+const ItemDetail = () => {
 
-    const { items, addItem, removeItem, clearItems, countItems } = useContext(CartContext);
+    const { id } = useParams();
+
+    const [autoparte, setAutoparte] = useState([]);
+
+    const { addItem } = useContext(CartContext);
 
     const [cantidad, setCantidad] = useState(0);
 
+    const getAutoparte = async () => {
+        const autop = id && await getAutoparteById(id) ;
+        setAutoparte(autop);
+    } 
+  
     const sumar = (cant) => {
         setCantidad(cant);
-        addItem( { id : prop.id, titulo: prop.titulo, precio : prop.precio, cantidad : cant })
+        addItem( { id: autoparte.id, nroparte : autoparte.nroparte, titulo: autoparte.titulo, precio : autoparte.precio, cantidad : cant })
     }
+  
+    useEffect(() => {
+      return () => {
+        getAutoparte(id);
+      };
+    }, [])
 
     return (
 
     <article className="articuloDetalle">
         <div className="cajaImg">
-            <img src={foto} alt="Foto item"/>
+            <img src={autoparte.imagen} alt={autoparte.titulo}/>
         </div>
 
         <div className="agrupador">
             <div className="datosArticulo">
                 <div className="titulo">
-                    {prop.titulo}
+                    {autoparte.titulo}
                 </div>
 
                 <div className="descripcion">
-                    {prop.descripcion}
+                    {autoparte.descripcion}
                 </div>
                 
                 <div className="numeroParte">
-                    <span>Numero de parte: </span>{prop.id}
+                    <span>Numero de parte: </span>{autoparte.id}
                 </div>
 
                 <div className="precio">
-                <span>Precio: </span>{prop.precio}
+                <span>Precio: </span>{autoparte.precio}
                 </div>
 
                 <div className="stock">
-                <span>Stock: </span>{prop.stock}
+                <span>Stock: </span>{autoparte.stock}
                 </div>
             </div>
             {
                 
                 cantidad === 0 ?
                     <div className="contadorCarrito">
-                        <ItemCount id={prop.id} stock={prop.stock} onAdd={sumar}/>
+                        <ItemCount id={autoparte.id} stock={autoparte.stock} onAdd={sumar}/>
                     </div> 
                     : 
                     <div>

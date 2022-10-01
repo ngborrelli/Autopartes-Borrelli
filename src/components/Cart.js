@@ -42,9 +42,9 @@ const Cart = () => {
 
           {
             items.map( (item, i) => 
-                <tr>
+                <tr key={item.id}>
                   <td>
-                    {item.id}
+                    {item.nroparte}
                   </td>
                   <td>
                     {item.titulo}

@@ -1,5 +1,4 @@
 import React from 'react'
-import imagen from '../assets/images/2_1.jpg';
 import { Link } from 'react-router-dom';
 
 const Item = (prop) => {
@@ -7,15 +6,15 @@ const Item = (prop) => {
   return (
     <article className="articulo">
         <div>
-            <img src={imagen} />
+            <img src={prop.imagen} alt={prop.titulo}/>
         </div>
         <div className="datosArticulo">
             <div className="titulo">
-                <Link className="linkTitulo" to={`/articulo/${prop.id}`}>{prop.titulo}</Link>
+                <Link className="linkTitulo" to={`/autoparte/${prop.id}`}>{prop.titulo}</Link>
             </div>
             
             <div className="numeroParte">
-                <span>Numero de parte: </span>{prop.id}
+                <span>Numero de parte: </span>{prop.nroparte}
             </div>
 
             <div className="precio">
