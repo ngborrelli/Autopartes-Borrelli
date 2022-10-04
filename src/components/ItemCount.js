@@ -23,7 +23,7 @@ const ItemCount = (prop) => {
         }
     }
 
-    const [itemCounter, setItemCounter] = useState(0);
+    const [itemCounter, setItemCounter] = useState(1);
 
   return (
     <div className="itemCounter">

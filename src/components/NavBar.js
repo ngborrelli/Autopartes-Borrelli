@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../app/CartContext';
 import { useContext } from 'react';
 import { getDocuments } from '../app/FirebaseCalls';  
+import { LoadDB } from './LoadDB';
 
 const NavBar = () => {
 

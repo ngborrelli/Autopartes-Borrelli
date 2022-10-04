@@ -6,9 +6,8 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-  let importeTotal = 0;
-
-  const { items, addItem, removeItem, clearItems, countItems, calcularImporte } = useContext(CartContext);
+ 
+  const { items, removeItem, clearItems, countItems, calcularImporte } = useContext(CartContext);
 
   return (
 
@@ -42,7 +41,7 @@ const Cart = () => {
 
           {
             items.map( (item, i) => 
-                <tr key={item.id}>
+                <tr key={item.nroparte}>
                   <td>
                     {item.nroparte}
                   </td>
@@ -92,6 +91,7 @@ const Cart = () => {
         </tbody>
       </table>
       <button className="botonVaciar" onClick={ () => clearItems() } >Vaciar carrito</button>
+      <Link className="botonFinalizar" to="/cerrarCompra">Comprar</Link>
     </div>
 
     : 

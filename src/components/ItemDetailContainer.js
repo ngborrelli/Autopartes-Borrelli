@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import { React } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 
@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
   
   return (
     <div>
-        <ItemDetail id={id} />
+        <ItemDetail autoparteId={id} />
     </div>
   )
 }

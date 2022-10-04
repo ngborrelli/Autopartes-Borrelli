@@ -24,6 +24,7 @@ const Item = (prop) => {
             <div className="stock">
             <span>Stock: </span>{prop.stock}
             </div>
+         
         </div>
         <div>
             

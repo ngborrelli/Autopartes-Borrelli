@@ -1,9 +1,10 @@
-import { collection, getDocs, query, doc, getDoc, addDoc, where } from "firebase/firestore";
+import { collection, getDocs, query, doc, getDoc, addDoc, updateDoc, where } from "firebase/firestore";
 import { db } from './Firebase';
 
 export const createDocuments = async(collName, obj) => {
     const colRef = collection(db, collName);
     const data = await addDoc(colRef, obj);
+    console.log('createDocuments: ' + data.id)
     return data.id;
 }
 
@@ -33,6 +34,13 @@ export const getAutoparteById = async (id) => {
     const result = await getDoc(doc(colRef, id));
     return result.data();
 }
+
+export const updateStock = async (id, nuevoStock) => {
+  const colRef = collection(db, 'autopartes');
+  await updateDoc(doc(colRef, id), {stock: nuevoStock})
+}
+
+//------------------------------------------------------------------------------
 
 const getArrayFromCollection = (collection) => {
     return collection.docs.map(doc => {
