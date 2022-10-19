@@ -14,6 +14,7 @@ const Cart = () => {
     countItems() > 0 ?
 
     <div className="divTablaCarrito" key="1">
+      <h1>Tu carrito de compras</h1>
       <table className="tablaCarrito">
         <thead>
           <tr>
@@ -52,10 +53,10 @@ const Cart = () => {
                     {item.cantidad}
                   </td>
                   <td>
-                    {item.precio}
+                    {item.precio + '$'}
                   </td>
                   <td>
-                    {item.precio*item.cantidad}
+                    {item.precio*item.cantidad + '$'}
                   </td>
                   <td>
                     <button className="botonQuitar" key={i} onClick={ () => removeItem(item.id) }>Quitar</button>
@@ -80,7 +81,7 @@ const Cart = () => {
             </td>
             <td>
             {
-              calcularImporte()
+              calcularImporte() + '$'
             }
             </td>
             <td>

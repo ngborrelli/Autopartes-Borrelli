@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../app/CartContext';
 import { getAutoparteById } from '../app/FirebaseCalls';    
 
-const ItemDetail = (props) => {
+const ItemDetail = () => {
 
     const { id } = useParams();
 
@@ -15,7 +15,7 @@ const ItemDetail = (props) => {
 
     const [cantidad, setCantidad] = useState(0);
 
-    const getAutoparte = async (catid) => {
+    const getAutoparte = async () => {
         const autop = id && await getAutoparteById(id) ;
         setAutoparte(autop);
     } 
@@ -49,15 +49,11 @@ const ItemDetail = (props) => {
                 </div>
                 
                 <div className="numeroParte">
-                    <span>Numero de parte: </span>{autoparte.nroparte} - {id}
-                </div>
-
-                <div className="numeroParte">
-                    <span>Id. Firebase: </span>{autoparte.id}
-                </div>                
+                    <span>Numero de parte: </span>{autoparte.nroparte}
+                </div>               
 
                 <div className="precio">
-                <span>Precio: </span>{autoparte.precio}
+                <span>Precio: </span>{autoparte.precio + '$'}
                 </div>
 
                 <div className="stock">

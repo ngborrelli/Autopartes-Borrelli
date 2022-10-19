@@ -7,7 +7,7 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
   
   return (
-    <div>
+    <div className="cajaArticuloDetalle">
         <ItemDetail autoparteId={id} />
     </div>
   )

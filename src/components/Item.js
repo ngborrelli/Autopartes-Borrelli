@@ -5,9 +5,9 @@ const Item = (prop) => {
 
   return (
     <article className="articulo">
-        <div>
-            <img src={prop.imagen} alt={prop.titulo}/>
-        </div>
+        
+        <img src={prop.imagen} alt={prop.titulo}/>
+        
         <div className="datosArticulo">
             <div className="titulo">
                 <Link className="linkTitulo" to={`/autoparte/${prop.id}`}>{prop.titulo}</Link>
@@ -18,7 +18,7 @@ const Item = (prop) => {
             </div>
 
             <div className="precio">
-            <span>Precio: </span>{prop.precio}
+            <span>Precio: </span>{prop.precio + '$'}
             </div>
 
             <div className="stock">

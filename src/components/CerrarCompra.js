@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext } from 'react';
 import { CartContext } from '../app/CartContext';
 import { createDocuments, getAutoparteById, updateStock } from '../app/FirebaseCalls';
-import { Timestamp} from "firebase/firestore";
+import { Timestamp } from "firebase/firestore";
 
 const CerrarCompra = () => {
 
@@ -49,12 +49,12 @@ const CerrarCompra = () => {
               await createDocuments('facturas', factura);
               await updateStock(item.id, Number(autop.stock - item.cantidad));
               clearItems();
-              alert ("Gracias por tu compra!")
             }
             else {
               itemsConError.push(item);
             }
           });
+          alert ("Gracias por tu compra!")
 
     }
 
@@ -79,33 +79,33 @@ const CerrarCompra = () => {
                   <td>{item.nroparte}</td>
                   <td>{item.titulo}</td>
                   <td>{item.cantidad}</td>
-                  <td>{item.precio}</td>
-                  <td>{item.importe}</td>
-                  <td>{item.immporteIVA}</td>
-                  <td>{item.importeMasIVA}</td>
+                  <td>{item.precio.toFixed(2)}$</td>
+                  <td>{item.importe.toFixed(2)}$</td>
+                  <td>{item.immporteIVA.toFixed(2)}$</td>
+                  <td>{item.importeMasIVA.toFixed(2)}$</td>
                 </tr>
               )
           }
           <tr>
-            <td>Total</td>
             <td></td>
             <td></td>
             <td></td>
-            <td>{totImp}</td>
-            <td>{totImpIVA.toFixed(2)}</td>
-            <td>{totImpMasIVA}</td>            
+            <td><b>Total</b></td>
+            <td>{totImp.toFixed(2)}$</td>
+            <td>{totImpIVA.toFixed(2)}$</td>
+            <td>{totImpMasIVA.toFixed(2)}$</td>            
           </tr>
 
         </tbody>
       </table>
 
-          <div>
+          <div className="cajaFormCompra">
                 <label>Nombre:</label>
                 <input type="text" name="txtNombre" placeholder="Tu nombre" onChange={ (e) => { factura.nombre = e.target.value} } />
                 <label>Correo eletrónico:</label>
                 <input type="email" name="txtCorreo" placeholder="Tu correo electrónico" onChange={ (e) => { factura.correo = e.target.value} } />
                 <label>Teléfono:</label>
-                <input type="number" name="txtTelefono" placeholder="Tu teléfono (sin espacios ni guiones)" onChange={ (e) => { factura.telefono = e.target.value} } />
+                <input type="text" name="txtTelefono" placeholder="Tu teléfono (sin espacios ni guiones)" onChange={ (e) => { factura.telefono = e.target.value} } />
                 <button className="botonCerrarCompra" onClick={ () => cerrarCompra() } >Finalizar compra</button>
           </div>
     </div>

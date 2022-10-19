@@ -36,8 +36,8 @@ export const getAutoparteById = async (id) => {
 }
 
 export const updateStock = async (id, nuevoStock) => {
-  const colRef = collection(db, 'autopartes');
-  await updateDoc(doc(colRef, id), {stock: nuevoStock})
+    const colRef = collection(db, 'autopartes');
+    await updateDoc(doc(colRef, id), {stock: nuevoStock})
 }
 
 //------------------------------------------------------------------------------

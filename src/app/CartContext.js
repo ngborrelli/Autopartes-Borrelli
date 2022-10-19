@@ -24,7 +24,7 @@ const Provider = ( { children } ) => {
 
         let contador = 0;
 
-        items.map( (item, i) => {
+        items.map( (item) => {
             contador+=item.cantidad;
         })
 

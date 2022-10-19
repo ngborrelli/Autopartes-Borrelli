@@ -21,11 +21,11 @@ const ItemList = () => {
 
 
   return (
-        <div>
+        <>
           {
             autopartes && autopartes.map((autoparte, i) => <Item key={autoparte.id} id={autoparte.id} nroparte={autoparte.nroparte} titulo={autoparte.titulo} precio={autoparte.precio} stock={autoparte.stock} imagen={autoparte.imagen} currentCat={catid}/>)
           }
-        </div>
+        </>
   )
 }
 

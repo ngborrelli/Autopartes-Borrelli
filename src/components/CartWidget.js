@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
 
-  const { items, addItem, removeItem, clearItems, countItems } = useContext(CartContext);
+  const { countItems } = useContext(CartContext);
 
   return (
     <div className="carrito">
